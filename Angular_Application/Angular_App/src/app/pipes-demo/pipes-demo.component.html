@@ -1,0 +1,49 @@
+<section class="box">
+     <h1> String Related Pipes Demo</h1>
+    <p><strong>Original :</strong> {{str}}</p>
+    <p><strong>lowerCase :</strong> {{str | lowercase}}</p>
+    <p><strong>upperCase :</strong> {{str | uppercase}}</p>
+    <p><strong>titleCaase :</strong> {{str | titlecase}}</p>
+
+</section>
+
+
+<section class="box">
+    <h1> Currency Related Pipes Demo</h1>
+   <p><strong>Original :</strong> {{num}}</p>
+   <p><strong>INR :</strong> {{num | currency : "INR"}}</p>
+   <p><strong>USD :</strong> {{num | currency : "USD"}}</p>
+   <p><strong>GBP :</strong> {{num | currency : "GBP"}}</p>
+
+</section>
+
+<section class="box">
+    <h1> Number Related Pipes Demo</h1>
+   <p><strong>Original :</strong> {{num}}</p>
+   <p>{{num | number : "10.10"}}</p>
+   <p> {{num | number : "2.0-0"}}</p>
+   <p> {{num | number : "2.3-5"}}</p>
+   <p> {{num | number : "2.3-3"}}</p>
+
+</section>
+
+
+<section class="box">
+    <h1> Date Related Pipes Demo</h1>
+   <p><strong>Original :</strong> {{date}}</p>
+   <p>{{date | date : "short"}}</p>
+   <p>{{date | date : "long"}}</p>
+   <p>{{date | date : "dd-mm-yy"}}</p>
+   <p>{{date | date : "dd-mmm-yyyy"}}</p>
+   <p>{{date | date : "dd-mmm-yyyy hh:mm:ss aa"}}</p>
+
+
+</section>
+
+
+<section class="box">
+    <h1> Inward Custom Pipes Demo</h1>
+   <p><strong>Original :</strong> {{num}}</p>
+   <p>{{num | inwords}}</p>
+  
+</section>

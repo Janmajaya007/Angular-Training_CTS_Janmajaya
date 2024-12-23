@@ -1,0 +1,36 @@
+<section class="box justify-content-center d-flex">
+    <div class="justify-content-center d-flex flex-column">
+        <div>
+            <h1>EMI Calculator</h1>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="loanAmount" class="form-label">Loan AMount</label>
+                        <input type="number" value="" class="form-control" id="loanAmount" name="loanAmount" [(ngModel)]="loanAmount"  >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="rateOfInterest" class="form-label">Rate of Interest (p.a)</label>
+                        <input type="number" class="form-control" id="rateOfInterest" name="rateOfInterest" [(ngModel)]="rateOfInterest" >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="timePeriodInMonth" class="form-label">Time Period (in Months)</label>
+                        <input type="number" class="form-control" id="timePeriodInMonth" name="timePeriodInMonth" [(ngModel)]="timePeriodInMonths" >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="calculatedemi" class="form-label">EMI {{calculatedEMI}}</label>
+                    </div>
+    
+                    <div class="justify-content-around d-flex">
+                        <button  (click)="emiCalculation(loanAmount, rateOfInterest, timePeriodInMonths )" class="btn btn-warning">Calculate EMI</button>
+                        <button type="reset" (click)="resetEMI()" class="btn btn-primary">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

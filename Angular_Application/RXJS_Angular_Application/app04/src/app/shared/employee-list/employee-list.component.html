@@ -1,0 +1,48 @@
+<section class="col-sm-8 mx-auto p-4">
+    <h4>Employes List</h4>
+
+    @if (!employees && !erorMssg) {
+        <app-message-box>
+            <strong>Please wait while loading</strong>
+        </app-message-box> 
+    }
+    @else if (erorMssg) {
+        <app-message-box type="error">
+            <strong>{{erorMssg}}</strong>
+        </app-message-box> 
+    }
+    @else if (employees && employees.length===0) {
+        <app-message-box >
+            <strong>No recored to Display !</strong>
+        </app-message-box>
+    }
+        @else {
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Full Name</th>
+                        <th>Mobile</th>
+                        <th>EmailId</th>
+                        <th>Department</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (c of employees; track c.id) {
+                        <tr>
+                            <td>{{c.id}}</td>
+                            <td>{{c.fullName}}</td>
+                            <td>{{c.mobile}}</td>
+                            <td>{{c.emailId}}</td>
+                            <td>{{c.department}}</td>
+                            <td>
+                                <a type="button" class="btn btn-sm btn-secondary me-1" [routerLink]="['/editEmployee', c.id]">EDIT</a>
+                                <button type="button" class="btn btn-sm btn-danger" (click)="delete(c.id)">DELETE</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+</section>

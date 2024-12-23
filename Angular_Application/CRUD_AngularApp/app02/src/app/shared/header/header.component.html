@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container fluid">
+        <!-- <a href="#" class="navbar-brand"> {{brand ?? "undefined"}}</a> -->
+         <a routerLink="/" class="navbar=brand"> {{brand ?? "undefined"}}</a>
+         <ul class="navbar-nav mb-0 mb-lg-0 ">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/addContact"  routerLinkActive="active">New Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/employees" routerLinkActive="active">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/addEmployee"  routerLinkActive="active">New Employee</a>
+            </li>
+         </ul>
+    </div>
+</nav>

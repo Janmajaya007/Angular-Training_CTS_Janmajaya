@@ -1,0 +1,11 @@
+.bordered{
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.centered{
+    display: block;
+    margin: auto;
+    text-align: left;
+    background-color: brown;
+}

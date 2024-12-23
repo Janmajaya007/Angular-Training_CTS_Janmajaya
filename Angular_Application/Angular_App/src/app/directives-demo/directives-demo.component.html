@@ -1,0 +1,40 @@
+<section class="box">
+    <h1>Custom Directive Demo</h1>
+    <p appHighlight >This is a paragraph</p>
+    <div appHighlight>Thsi is a div</div>
+    <section appHighlight>This is a  section</section>
+    <p [appHighlight]="{bgColor:'red', fgColor:'white'}" >This is a paragraph</p>
+</section>
+
+<section class="box">
+    <h1>Build In Control Flow</h1>
+    <!-- <ol>
+        @for (f of friends; track $index; let i= $index) {
+            <li> {{f}}
+                <button type="button" (click)="removeFriend(i)"></button>
+            </li>
+        } @empty {
+            <li> NO RECORDS TO DISPLAY </li>
+        }
+    </ol> -->
+
+    @if (friends && friends.length >0) {
+        <ol>
+            @for (f of friends; track $index; let i= $index) {
+                <li> {{f}}
+                    <button type="button" (click)="removeFriend(i)">X</button>
+                </li>
+            }
+        </ol>
+    } @else {
+        <p> NO RECORDS TO DISPLAY</p>
+    }
+
+    <form action="" (ngSubmit)="addFriend()">
+        <label for="">
+            FriendName : <input type="text" [(ngModel)]="friendName" name="friendName"/>
+        </label>
+        <button>Add</button>
+    </form>
+
+</section>

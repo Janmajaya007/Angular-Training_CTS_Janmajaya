@@ -1,0 +1,75 @@
+<section class="col-sm-5 border border-dark p-4 mx-auto">
+    <h3>{{isEditing?"Edit ":"New "}} Employee</h3>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="formSubmitted()">
+        <div class="form-control-group">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" formControlName="id" readonly="true">
+        </div>
+
+        <div class="form-control-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" formControlName="fullName" >
+            @if (fullName?.invalid && (fullName?.touched || fullName?.dirty)) {
+                <div class="text-danger">
+                    @if (fullName?.errors!['required']) {
+                        <span>Full Name cannot be blank</span>
+                    }@else if (fullName?.errors!['minlength']) {
+                        <span>Full Name must be atlest 5 characters in length</span>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="form-control-group">
+            <label class="form-label">Mobile </label>
+            <input type="number" class="form-control" formControlName="mobile" >
+
+            @if (mobile?.invalid && (mobile?.touched || mobile?.dirty)) {
+                <div class="text-danger">
+                    @if (mobile?.errors!['required']) {
+                        <span>Mobile Number cannot be blank</span>
+                    }@else if (mobile?.errors!['pattern']) {
+                        <span>Mobile number must be a 10 digit number</span>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="form-control-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="emailId" >
+
+            @if (emailId?.invalid && (emailId?.touched || emailId?.dirty)) {
+                <div class="text-danger">
+                    @if (emailId?.errors!['required']) {
+                        <span>E-MailId cannot be blank</span>
+                    }@else if (emailId?.errors!['email']) {
+                        <span>EmailId must be a valid</span>
+                    }
+                </div>
+            }
+
+        </div>
+
+        <div class="form-control-group">
+            <label class="form-label">Department</label>
+            <input type="text" class="form-control" formControlName="department" >
+
+            @if (department?.invalid && (department?.touched || department?.dirty)) {
+                <div class="text-danger">
+                    @if (department?.errors!['required']) {
+                        <span>E-MailId cannot be blank</span>
+                    }@else if (department?.errors!['minlength']) {
+                        <span>Full Name must be atlest 5 characters in length</span>
+                    }
+                </div>
+            }
+
+        </div>
+
+        <div class="d-grid mt-1">
+            <button class="btn btn-primary" [disabled]="employeeForm.invalid">Save Contact</button>
+        </div>
+    </form>
+</section>

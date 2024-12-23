@@ -1,0 +1,39 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fullName": "Raghu Shrivastab",
+      "mobile": "9958963478",
+      "emailId": "raghu@gmail.com",
+      "department":"HR"
+    },
+    {
+      "id": 2,
+      "fullName": "Shyam Natrajan",
+      "mobile": "9865321476",
+      "emailId": "shyam@gmail.com",
+      "department":"ABC"
+    },
+    {
+      "id": 3,
+      "fullName": "Ritu Poonawala",
+      "mobile": "8965332175",
+      "emailId": "ritu@gmail.com",
+      "department":"FRE"
+    },
+    {
+      "id": 4,
+      "fullName": "Sourav Garg",
+      "mobile": "9874512360",
+      "emailId": "sourav@gmail.comqq",
+      "department":"CEO"
+    },
+    {
+      "id": 5,
+      "fullName": "aaaaa",
+      "mobile": 9874563210,
+      "emailId": "ah@g.com",
+      "department":"WER"
+    }
+  ]
+}

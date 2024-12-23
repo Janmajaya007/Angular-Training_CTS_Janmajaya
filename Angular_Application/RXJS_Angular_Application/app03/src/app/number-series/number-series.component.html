@@ -1,0 +1,31 @@
+<section class="col-sm border border-dark rounded-3 m-4 p-4">
+    <form action="" (ngSubmit)="formSubmitted()">
+        <div class="form-group">
+            <label for="" class="form-label"> <b>Lower Bound</b></label>
+            <input type="number" name="lb" id="" [(ngModel)]="lb" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="" class="form-label"> <b>Upper Bound</b></label>
+            <input type="number" name="ub" id="" [(ngModel)]="ub" class="form-control">
+        </div>
+
+        <div class="d-grid mt-3">
+            <button class="btn btn-primary" [disabled]="isinProgress"><b>GENERATE</b></button>
+        </div>
+    </form>
+
+    @if (errorMessage) {
+        <div class="alert alert-danger fw-bold p-1">
+            {{errorMessage}}
+        </div>
+    }
+
+    @if (results && results.length) {
+        <div class="alert alert-info fw-bold pt-3">
+            @for (n of results; track $index) {
+            <span>{{n +" "}}</span>
+            }
+        </div>
+    }
+</section>

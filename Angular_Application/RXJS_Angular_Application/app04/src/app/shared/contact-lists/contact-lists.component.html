@@ -1,0 +1,45 @@
+<section class="col-sm-8 mx-auto my-auto p-4">
+    <h4>Contacts List</h4>
+
+        @if (!contacts && !erorMssg) {
+            <app-message-box>
+                <strong>Please wait while loading</strong>
+            </app-message-box> 
+        }
+        @else if (erorMssg) {
+            <app-message-box type="error">
+                <strong>{{erorMssg}}</strong>
+            </app-message-box> 
+        }
+        @else if (contacts && contacts.length===0) {
+            <app-message-box >
+                <strong>No recored to Display !</strong>
+            </app-message-box>
+        }
+        @else {
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Contacts</th>
+                        <th>Full Name</th>
+                        <th>Mobile</th>
+                        <th>EmailId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (c of contacts; track c.id) {
+                        <tr>
+                            <td>{{c.id}}</td>
+                            <td>{{c.fullName}}</td>
+                            <td>{{c.mobile}}</td>
+                            <td>{{c.emailId}}</td>
+                            <td>
+                                <a type="button" class="btn btn-sm btn-secondary me-1" [routerLink]="['/editContact', c.id]">EDIT</a>
+                                <button type="button" class="btn btn-sm btn-danger" (click)="delete(c.id)">DELETE</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+</section>

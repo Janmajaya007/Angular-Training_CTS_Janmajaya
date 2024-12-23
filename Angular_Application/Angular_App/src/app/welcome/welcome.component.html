@@ -1,0 +1,23 @@
+<section class="box">
+    <p class="para-design-center">Hi Learners here {{username}} Welcome you to the Angular World </p>
+    <div >
+        <img [src]="logos[logoindex]" (click)="changeLogo()" [style.width.px]="logoWidth" [ngClass]="logoClass">
+        <p>*click on image to change the logo</p>
+    </div>
+    <div>
+        <label>
+            <strong>Image Width : <em>{{logoWidth}}</em></strong> <br>
+            <input type="range" name="lw" [(ngModel)]="logoWidth" min="100" max="500" />
+        </label>
+    </div>
+    <div>
+        <label><input type="checkbox" name="ch1" [(ngModel)]="logoClass.bordered"/> Apply bordered</label>
+        <label><input type="checkbox" name="ch2" [(ngModel)]="logoClass.centered"/> Apply Center</label>
+    </div>
+    <form class="text-center" action="">
+        <label for="">
+            <strong>Input your name please </strong> <br>
+            <input class="my-3" type="text" name="unm" id="" [(ngModel)]="username" placeholder="Enter Your Name">
+        </label>
+    </form>
+</section>

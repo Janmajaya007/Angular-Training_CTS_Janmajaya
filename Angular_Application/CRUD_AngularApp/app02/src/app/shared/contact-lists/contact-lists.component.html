@@ -1,0 +1,32 @@
+<section class="col-sm-8 mx-auto my-auto p-4">
+    <h4>Contacts List</h4>
+
+        @if (!contacts || contacts.length===0) {
+            <p>No Records Avaiable</p>
+        }@else {
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Contacts</th>
+                        <th>Full Name</th>
+                        <th>Mobile</th>
+                        <th>EmailId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (c of contacts; track c.id) {
+                        <tr>
+                            <td>{{c.id}}</td>
+                            <td>{{c.fullName}}</td>
+                            <td>{{c.mobile}}</td>
+                            <td>{{c.emailId}}</td>
+                            <td>
+                                <a type="button" class="btn btn-sm btn-secondary me-1" [routerLink]="['/editContact', c.id]">EDIT</a>
+                                <button type="button" class="btn btn-sm btn-danger" (click)="deleteContact(c.id)">DELETE</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+</section>

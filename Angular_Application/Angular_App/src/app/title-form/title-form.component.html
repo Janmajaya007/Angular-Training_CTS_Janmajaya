@@ -1,0 +1,10 @@
+<section class="box">
+    <h1>Change application Title</h1>
+    <form (ngSubmit)="triggeredFormSubmitted()">
+        <div>
+            <label for="applicationName">The Application Name</label><br>
+            <input type="text" name="titile" [(ngModel)]="title">
+        </div>
+        <button >Submit</button>
+    </form>
+</section>
